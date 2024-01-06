@@ -1,4 +1,4 @@
-const backend_endpoint = process.env.BACKEND_ENDPOINT;
+// const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 class TiktokDownloader {
 
@@ -17,7 +17,7 @@ class TiktokDownloader {
             method: "POST",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
-              'url': url,
+                'url': url,
             })
         });
 
