@@ -1,4 +1,4 @@
-// const backend_endpoint = process.env.BACKEND_ENDPOINT;
+const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 class TiktokDownloader {
 
@@ -13,7 +13,7 @@ class TiktokDownloader {
     }
 
     async getVideo(url: string) {
-        const res = await fetch(`http://localhost:4000/api/v2/download/tiktok`, {
+        const res = await fetch(`${backend_endpoint}/api/v2/download/tiktok`, {
             method: "POST",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button } from "./@/components/ui/button";
 import { Input } from "./@/components/ui/input";
-import { ApiDownloader } from './services/api';
+import { ApiDownloader } from './services/Api';
 
 function App() {
     const [input, setInput] = useState('');
