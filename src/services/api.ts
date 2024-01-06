@@ -1,16 +1,28 @@
 const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 class TiktokDownloader {
-     async getVideo(url: string) {
-      const res = await fetch(`http://localhost:4000/api/v1/download/tiktok`, {
-          method: "POST",
-          body: JSON.stringify({
-            'url': url,
-          })
-      });
 
-      return await res.json();
-  }
+    getHeaders(contentType?: string) {
+        const headers = new Headers();
+
+        if (contentType) {
+            headers.set("Content-Type", contentType);
+        }
+
+        return headers;
+    }
+
+    async getVideo(url: string) {
+        const res = await fetch(`http://localhost:4000/api/v2/download/tiktok`, {
+            method: "POST",
+            headers: this.getHeaders('application/json'),
+            body: JSON.stringify({
+              'url': url,
+            })
+        });
+
+        return await res.json();
+    }
 }
 
 export const ApiDownloader = new TiktokDownloader();
