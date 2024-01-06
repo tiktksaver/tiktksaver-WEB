@@ -78,7 +78,19 @@ class TiktokDownloader {
 
         return await res.json();
     }
+
+    async getHDVideo(url: string) {
+        const res = await fetch(`http://localhost:4000/api/v3/download/tiktok`, {
+            method: "POST",
+            headers: this.getHeaders('application/json'),
+            body: JSON.stringify({
+                'url': url,
+            })
+        });
+
+        return await res.json();
+    }
 }
 
 export const ApiDownloader = new TiktokDownloader();
-export type { ApiResponse };
+export type { ApiResponse, VideoData };
