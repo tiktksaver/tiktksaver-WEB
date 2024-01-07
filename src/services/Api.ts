@@ -1,5 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import process from '../environments.json';
 const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 interface Author {
