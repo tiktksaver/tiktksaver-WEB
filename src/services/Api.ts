@@ -1,4 +1,6 @@
-// const backend_endpoint = process.env.BACKEND_ENDPOINT;
+import dotenv from 'dotenv';
+dotenv.config();
+const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 interface Author {
     uid: string;
@@ -68,7 +70,7 @@ class TiktokDownloader {
     }
 
     async getVideo(url: string): Promise<ApiResponse> {
-        const res = await fetch(`http://localhost:4000/api/v2/download/tiktok`, {
+        const res = await fetch(`${backend_endpoint}/api/v2/download/tiktok`, {
             method: "POST",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
@@ -80,7 +82,7 @@ class TiktokDownloader {
     }
 
     async getHDVideo(url: string) {
-        const res = await fetch(`http://localhost:4000/api/v3/download/tiktok`, {
+        const res = await fetch(`${backend_endpoint}/api/v3/download/tiktok`, {
             method: "POST",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
