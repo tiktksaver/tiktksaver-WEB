@@ -39,7 +39,10 @@ export default function Home() {
     const [pasted, setPaste] = React.useState(false);
     const [progress, setProgress] = React.useState(0);
 
+    const [debug, setDebug] = React.useState(false);
+
     async function getDownloadVideoUrl() {
+        setDebug(true);
         setLoading(true);
         try {
             const res = await ApiDownloader.getVideo(input);
@@ -66,7 +69,7 @@ export default function Home() {
             }
         } catch {
             setLoading(false);
-            setInput('');
+            // setInput('');
             setError(true);
         }
     }
@@ -184,6 +187,7 @@ export default function Home() {
                                 </Button>
                             </div>
                             <Progress value={progress} className={!loading ? 'hidden' : 'mt-2 h-3'}/>
+                            {debug && (<div>URL: {input}</div>)}
                         </div>
                     </div>
                     :
