@@ -74,7 +74,7 @@ class TiktokDownloader {
             body: JSON.stringify({
                 'url': url,
             }),
-            
+
         });
 
         return await res.json();
