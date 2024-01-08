@@ -13,6 +13,9 @@ export default defineConfig({
         port: 3000,
         host: 'localhost'
     },
+    build: {
+        outDir: 'build'
+    },
     define: {
         "process.env.BACKEND_ENDPOINT": JSON.stringify(process.env.BACKEND_ENDPOINT),
     }
