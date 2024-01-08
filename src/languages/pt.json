@@ -2,5 +2,7 @@
   "PT": "Português",
   "EN": "Inglês",
   "TRANSLATE_LABEL": "Linguagens",
-  "TIKTOK_DOWNLOAD_INPUT_LABEL": "BAIXE AGORA SEU VÍDEO TIKTOK"
+  "TIKTOK_DOWNLOAD_INPUT_LABEL": "BAIXE AGORA SEU VÍDEO DO TIKTOK",
+  "TIKTOK_DOWNLOAD_INPUT_PLACEHOLDER": "Cole aqui o url do seu vídeo!",
+  "TIKTOK_DOWNLOAD_INPUT_ERROR": "Url inserido não é válido, aqui um exemplo: https://www.tiktok.com/@/video/123456789"
 }

@@ -1,4 +1,3 @@
-import process from '../environments.json';
 const backend_endpoint = process.env.BACKEND_ENDPOINT;
 
 interface Author {
@@ -74,7 +73,8 @@ class TiktokDownloader {
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
                 'url': url,
-            })
+            }),
+            
         });
 
         return await res.json();
