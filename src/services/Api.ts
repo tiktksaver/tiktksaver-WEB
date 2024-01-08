@@ -60,6 +60,8 @@ class TiktokDownloader {
     getHeaders(contentType?: string) {
         const headers = new Headers();
 
+        headers.set('Access-Control-Allow-Origin', '*');
+        headers.set('Cache-Control', 'public, max-age=3600');
         if (contentType) {
             headers.set("Content-Type", contentType);
         }
