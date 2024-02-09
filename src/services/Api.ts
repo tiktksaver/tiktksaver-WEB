@@ -71,7 +71,7 @@ class TiktokDownloader {
 
     async getVideo(url: string): Promise<ApiResponse> {
         const res = await fetch(`${backend_endpoint}/api/v2/download/tiktok`, {
-            method: "POST",
+            method: "GET",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
                 'url': url,
@@ -84,7 +84,7 @@ class TiktokDownloader {
 
     async getHDVideo(url: string) {
         const res = await fetch(`${backend_endpoint}/api/v3/download/tiktok`, {
-            method: "POST",
+            method: "GET",
             headers: this.getHeaders('application/json'),
             body: JSON.stringify({
                 'url': url,
